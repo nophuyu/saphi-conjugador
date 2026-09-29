@@ -23,6 +23,5 @@ Conjugador de verbos quechuas. Escribes un verbo en infinitivo, por ejemplo `tak
 
 ## Pendiente
 
-- Las irregularidades de `ka` y `jaku`
 - Variaciones de escritura según diferentes regiones
 - Ampliar la lista de verbos del autocompletado
