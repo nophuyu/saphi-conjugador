@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Conjugador quechua</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <div class="brand">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M9 1h6v4h3v3h4v8h-4v3h-3v4H9v-4H6v-3H2V8h4V5h3z"/><circle cx="12" cy="12" r="3" fill="#d5112e"/></svg>
+      <div><small>Saphi</small></div>
+    </div>
+    <nav class="nav" aria-label="Secciones">
+      <button type="button" id="navConj" aria-current="page">Conjugar</button>
+      <button type="button" id="navSuf">Sufijos</button>
+    </nav>
+  </div>
+  <div class="weave" aria-hidden="true"></div>
+  <div class="hero">
+    <p class="kicker">Saphi es una herramienta para explorar cómo se forma el verbo en quechua. Escribe un verbo en infinitivo, como takiy (cantar), y mira sus formas como ser indicativo, potencial, imperativo, formas no personales y voz pasiva. Cada forma se desglosa en raíz, sufijos, tiempo y persona, para ver cómo se construye. También puedes añadir sufijos derivativos, como -ku o -chi. La descripción gramatical sigue la Gramática Quechua de Alfredo Quiroz Villarroel (2000) y no pretende cubrir todas las variedades de la lengua.</p>
+    <div class="search">
+      <label class="sr" for="verb">Verbo en infinitivo</label>
+      <input id="verb" type="text" value="takiy" autocomplete="off" autocapitalize="off" spellcheck="false" list="vlist" placeholder="Escribe un verbo: takiy, mikhuy…">
+      <button type="button" id="go">Conjugar</button>
+    </div>
+    <datalist id="vlist"></datalist>
+    <div class="quick" id="quick" aria-label="Verbos de ejemplo"></div>
+    <div class="err" id="err" role="status"></div>
+  </div>
+</header>
+
+<main id="app">
+  <section id="conjView">
+    <h1 id="title"></h1>
+    <div class="meta" id="meta"></div>
+
+    <details class="panel" id="sufpanel">
+      <summary>Añadir sufijos derivativos <span class="badge" id="sufbadge"></span></summary>
+      <p class="note" style="margin:8px 0 0">Se aplican en el orden en que los eliges: raíz + sufijo 1 + sufijo 2… + tiempo y persona. Máximo 3.</p>
+      <div id="sufgroups"></div>
+    </details>
+    <div class="applied" id="applied" style="margin:-4px 0 14px"></div>
+
+    <div class="controls">
+      <div class="seg" role="group" aria-label="Voz">
+        <button type="button" id="vAct" aria-pressed="true">Voz activa</button>
+        <button type="button" id="vPas" aria-pressed="false">Voz pasiva</button>
+      </div>
+      <div class="opts">
+        <label><input type="checkbox" id="optSplit" checked> Separar morfemas</label>
+        <label><input type="checkbox" id="optMulti"> Un color por morfema</label>
+        <button type="button" class="linkbtn" id="copyBtn">Copiar todo</button>
+        <span id="copyMsg" role="status"></span>
+      </div>
+    </div>
+    <div id="lead" class="legend"></div>
+    <div class="mnav" id="mnav"></div>
+    <div id="sections"></div>
+  </section>
+
+  <section id="sufView" hidden>
+    <h1>Sufijos <em>derivativos</em></h1>
+    <p class="note" style="margin:-6px 0 16px">Van entre la raíz y la terminación de tiempo o persona. Pulsa «Aplicar» para probarlos en el verbo actual.</p>
+    <div id="sufList"></div>
+  </section>
+</main>
+<footer>Si tienes comentarios o sugerencias sobre esta herramienta, envíame un correo electrónico a cyberphuyu@gmail.com <a href="mailto:example@example.com">example@example.com</a>.</footer>
+
+<div id="sheet" hidden><div class="box"><div class="in" id="sheetIn"></div></div></div>
+
+<script src="app.js"></script>
+</body>
+</html>
