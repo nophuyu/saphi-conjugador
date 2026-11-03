@@ -4,14 +4,42 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Conjugador quechua</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Radio+Canada:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="top">
   <div class="bar">
     <div class="brand">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M9 1h6v4h3v3h4v8h-4v3h-3v4H9v-4H6v-3H2V8h4V5h3z"/><circle cx="12" cy="12" r="3" fill="#d5112e"/></svg>
-      <div><small>Saphi</small></div>
+      <svg class="logo" viewBox="40 80 320 280" aria-hidden="true">
+        <g>
+          <path d="M192 206 C150 196 128 160 150 120 C188 140 198 176 192 206 Z" fill="#fff"/>
+          <path d="M160 138 C176 160 186 182 190 200" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+          <path d="M208 206 C250 196 272 160 250 120 C212 140 202 176 208 206 Z" fill="#fff"/>
+          <path d="M240 138 C224 160 214 182 210 200" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+          <path d="M200 210 C176 176 180 128 200 96 C220 128 224 176 200 210 Z" fill="#fff"/>
+          <path d="M200 120 L200 200" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+        </g>
+        <g fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M200 206 L200 262"/>
+          <path d="M200 262 L200 304"/>
+          <path d="M200 272 C174 276 146 286 124 306"/>
+          <path d="M158 282 C148 298 140 310 130 326"/>
+          <path d="M200 272 C226 276 254 286 276 306"/>
+          <path d="M242 282 C252 298 260 310 270 326"/>
+          <path d="M200 290 C186 302 176 318 168 336"/>
+          <path d="M200 290 C214 302 224 318 232 336"/>
+        </g>
+        <g fill="#fff">
+          <circle cx="124" cy="306" r="10"/><circle cx="130" cy="326" r="8"/>
+          <circle cx="276" cy="306" r="10"/><circle cx="270" cy="326" r="8"/>
+          <circle cx="168" cy="336" r="9"/><circle cx="232" cy="336" r="9"/>
+          <circle cx="200" cy="304" r="9"/>
+        </g>
+      </svg>
+      <span class="brand-name">Saphi</span>
     </div>
     <nav class="nav" aria-label="Secciones">
       <button type="button" id="navConj" aria-current="page">Conjugar</button>
@@ -20,7 +48,7 @@
   </div>
   <div class="weave" aria-hidden="true"></div>
   <div class="hero">
-    <p class="kicker">Saphi es una herramienta para explorar cómo se forma el verbo en quechua. Escribe un verbo en infinitivo, como takiy (cantar), y mira sus formas como ser indicativo, potencial, imperativo, formas no personales y voz pasiva. Cada forma se desglosa en raíz, sufijos, tiempo y persona, para ver cómo se construye. También puedes añadir sufijos derivativos, como -ku o -chi. La descripción gramatical sigue la Gramática Quechua de Alfredo Quiroz Villarroel (2000) y no pretende cubrir todas las variedades de la lengua.</p>
+    <p class="kicker">Saphi es una herramienta para aprender a conjugar verbos en quechua. Elige un verbo de la lista y explora sus formas: cómo afirmar algo, cómo dar una orden, cómo hablar del pasado o del futuro, entre otros. Cada forma se desglosa en sus partes para que entiendas cómo se construye. Saphi se basa en la <em>Gramática Quechua</em> de Alfredo Quiroz Villarroel, con especial énfasis en el Quechua del Sur (Quechua Sureño Boliviano), el de Cochabamba. Ten en cuenta que el quechua es una familia de lenguas extensa, y aquí se aborda solamente una variedad.</p>
     <div class="search">
       <label class="sr" for="verb">Verbo en infinitivo</label>
       <input id="verb" type="text" value="takiy" autocomplete="off" autocapitalize="off" spellcheck="false" list="vlist" placeholder="Escribe un verbo: takiy, mikhuy…">
@@ -45,10 +73,6 @@
     <div class="applied" id="applied" style="margin:-4px 0 14px"></div>
 
     <div class="controls">
-      <div class="seg" role="group" aria-label="Voz">
-        <button type="button" id="vAct" aria-pressed="true">Voz activa</button>
-        <button type="button" id="vPas" aria-pressed="false">Voz pasiva</button>
-      </div>
       <div class="opts">
         <label><input type="checkbox" id="optSplit" checked> Separar morfemas</label>
         <label><input type="checkbox" id="optMulti"> Un color por morfema</label>
@@ -63,7 +87,7 @@
 
   <section id="sufView" hidden>
     <h1>Sufijos <em>derivativos</em></h1>
-    <p class="note" style="margin:-6px 0 16px">Van entre la raíz y la terminación de tiempo o persona. Pulsa «Aplicar» para probarlos en el verbo actual.</p>
+    <p class="note" style="margin:-6px 0 16px">Van entre la raíz y la terminación de tiempo o persona. Pulsa "Aplicar" para probarlos en el verbo actual.</p>
     <div id="sufList"></div>
   </section>
 </main>
